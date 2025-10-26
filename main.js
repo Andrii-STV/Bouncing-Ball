@@ -1,23 +1,20 @@
-const staticBounce = document.getElementById("bounce1");
-let x = staticBounce.style.bottom;
-let y = staticBounce.style.left;
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
 
-function clickButton() {
-    for (let i=0; i<=480; i++) {
-        staticFromBottomToLeft(i);
-    }
-}
+ctx.beginPath();
+ctx.rect(20, 40, 50, 50);
+ctx.fillStyle = "red";
+ctx.fill();
+ctx.closePath();
 
-function staticFromBottomToLeft(i) {
+ctx.beginPath();
+ctx.arc(240, 160, 20, 0, Math.PI * 2, false);
+ctx.fillStyle = "green";
+ctx.fill();
+ctx.closePath();
 
-    setTimeout(() => {
-        if (staticBounce.style.left > "0px") {
-            staticBounce.style.bottom = `${i}px`;
-            staticBounce.style.left = `${100 + (-2 * i)}px`;
-        } else if (staticBounce.style.left = "0px") {
-            staticBounce.style.bottom = `${2 * i}px`;
-            staticBounce.style.left = `${(2 * i)}px`;
-        }
-    }, 10 * i);
-
-}
+ctx.beginPath();
+ctx.rect(160, 10, 100, 40);
+ctx.strokeStyle = "rgb(0 0 255 / 0.5)";
+ctx.stroke();
+ctx.closePath();
